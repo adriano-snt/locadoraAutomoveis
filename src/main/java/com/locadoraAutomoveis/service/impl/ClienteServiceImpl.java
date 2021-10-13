@@ -25,12 +25,12 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void deleteBy(String id) {
+    public void deleteBy(Integer id) {
         clienteRepository.deleteById(id);
     }
 
     @Override
-    public void findBy(String id) {
+    public void findBy(Integer id) {
         clienteRepository.findById(id);
     }
 

@@ -1,15 +1,38 @@
 package com.locadoraAutomoveis.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Locacao {
     @Id
+    @Column(name = "locacao_id")
     private Integer locacaoId;
-    private Integer automovelId;
-    private BigDecimal kimoletrosDaLocacao;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "automovel_id")
+    @JsonBackReference
+    private Automovel automovel;
+
+    @Column(name = "kilometros_da_locacao")
+    private Integer kilometrosDaLocacao;
+
+    @Column(name = "data_locacao")
     private LocalDateTime dataLocacao;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "cliente_id")
+    @JsonBackReference
+    private Cliente cliente;
 }

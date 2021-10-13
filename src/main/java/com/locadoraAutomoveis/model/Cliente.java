@@ -2,6 +2,7 @@ package com.locadoraAutomoveis.model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -18,7 +21,7 @@ import java.time.LocalDateTime;
 public class Cliente {
     @Id
     @Column(name = "cliente_id", unique = true)
-    private String clienteId;
+    private Integer clienteId;
 
     @Column
     private String nome;
@@ -30,7 +33,7 @@ public class Cliente {
     private String cpf;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_codigo_postal")
+    @JoinColumn(name = "endereco")
     @JsonBackReference
     private Endereco endereco;
 
@@ -40,4 +43,8 @@ public class Cliente {
     @Column(name = "updated_at")
     private LocalDateTime updateAt;
 
+
+    @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Locacao> locacoes = new ArrayList<>();
 }
