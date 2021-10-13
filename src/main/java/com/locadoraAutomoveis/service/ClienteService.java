@@ -11,7 +11,7 @@ public interface ClienteService {
 
    List<Cliente> findAll ();
 
-   void deleteBy(String id);
+   void deleteBy(Integer id);
 
-   void findBy(String id);
+   void findBy(Integer id);
 }

@@ -29,13 +29,13 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> deletarPorId(@PathVariable String id){
+    public ResponseEntity<Boolean> deletarPorId(@PathVariable Integer id){
         clienteService.deleteBy(id);
         return ResponseEntity.ok(Boolean.TRUE);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Boolean> atualizarPorId(@PathVariable String id, @RequestBody Cliente cliente){
+    public ResponseEntity<Boolean> atualizarPorId(@PathVariable Integer id, @RequestBody Cliente cliente){
         clienteService.findBy(id);
         clienteService.save(cliente);
         return ResponseEntity.ok(Boolean.TRUE);
