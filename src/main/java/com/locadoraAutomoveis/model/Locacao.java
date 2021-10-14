@@ -20,10 +20,8 @@ public class Locacao {
     @Column(name = "locacao_id")
     private Integer locacaoId;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "automovel_id")
-    @JsonBackReference
-    private Automovel automovel;
+
+    private String automovel_id;
 
     @Column(name = "kilometros_da_locacao")
     private Integer kilometrosDaLocacao;
