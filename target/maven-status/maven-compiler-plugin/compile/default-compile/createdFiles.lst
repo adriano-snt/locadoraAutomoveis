@@ -1,0 +1,17 @@
+com/locadoraAutomoveis/service/ClienteService.class
+com/locadoraAutomoveis/model/Cliente.class
+com/locadoraAutomoveis/service/impl/AutomovelServiceImpl.class
+com/locadoraAutomoveis/controller/ClienteController.class
+com/locadoraAutomoveis/controller/LocacaoController.class
+com/locadoraAutomoveis/service/impl/ClienteServiceImpl.class
+com/locadoraAutomoveis/service/impl/LocacaoServiceImpl.class
+com/locadoraAutomoveis/model/Automovel.class
+com/locadoraAutomoveis/repository/LocacaoRepository.class
+com/locadoraAutomoveis/controller/AutomovelController.class
+com/locadoraAutomoveis/LocadoraAutomoveisApplication.class
+com/locadoraAutomoveis/model/Locacao.class
+com/locadoraAutomoveis/repository/AutomovelRepository.class
+com/locadoraAutomoveis/model/Endereco.class
+com/locadoraAutomoveis/repository/ClienteRepository.class
+com/locadoraAutomoveis/service/LocacaoService.class
+com/locadoraAutomoveis/service/AutomovelService.class
