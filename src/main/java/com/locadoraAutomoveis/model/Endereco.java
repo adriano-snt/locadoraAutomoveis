@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Setter
 public class Endereco {
     @Id
-    @Column(name = "codigo_postal")
+    @Column(name = "codigo_postal", unique = true)
     private String codigoPostal;
 
     @Column

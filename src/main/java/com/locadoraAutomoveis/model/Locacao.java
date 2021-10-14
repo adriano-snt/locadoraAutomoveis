@@ -20,12 +20,9 @@ public class Locacao {
     @Column(name = "locacao_id")
     private Integer locacaoId;
 
-<<<<<<< HEAD
+    @Column(name = "automovel_id")
+    private Integer automovelId;
 
-    private String automovel_id;
-=======
-    private String automovel;
->>>>>>> main
 
     @Column(name = "kilometros_da_locacao")
     private Integer kilometrosDaLocacao;
