@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class Automovel {
+
     @Id
     @Column(name = "automovel_Id")
     private Integer automovelId;
