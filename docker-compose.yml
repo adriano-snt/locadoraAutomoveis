@@ -1,0 +1,10 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.3
+    ports:
+      - '5432:5432'
+    env_file:
+      - postgres.env
+    volumes:
+      - ./scripts/docker/postgres-init-scripts:/docker-entrypoint-initdb.d
