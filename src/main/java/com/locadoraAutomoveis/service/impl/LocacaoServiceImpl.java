@@ -27,5 +27,4 @@ public class LocacaoServiceImpl implements LocacaoService {
     @Override
     public void deleteBy(Integer id) { locacaoRepository.deleteById(id);}
 
-
 }
