@@ -2,6 +2,7 @@ package com.locadoraAutomoveis.model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -45,6 +46,6 @@ public class Cliente {
 
 
     @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.LAZY)
-    @JsonManagedReference
-    private List<Locacao> locacoes = new ArrayList<>();
+    @JsonIgnore
+    private List<Locacao> locacoes;
 }

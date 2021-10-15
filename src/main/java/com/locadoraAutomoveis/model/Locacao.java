@@ -1,7 +1,9 @@
 package com.locadoraAutomoveis.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,8 +22,11 @@ public class Locacao {
     @Column(name = "locacao_id")
     private Integer locacaoId;
 
-    @Column(name = "automovel_id")
-    private Integer automovelId;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "automovel")
+    @JsonIgnore
+    private Automovel automovel;
 
 
     @Column(name = "kilometros_da_locacao")
@@ -32,6 +37,6 @@ public class Locacao {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "cliente_id")
-    @JsonBackReference
+    @JsonIgnore
     private Cliente cliente;
 }
