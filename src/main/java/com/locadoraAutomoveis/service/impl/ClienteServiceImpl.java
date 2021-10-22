@@ -1,5 +1,6 @@
 package com.locadoraAutomoveis.service.impl;
 
+import com.locadoraAutomoveis.Exception.ResourcesNotFoundException;
 import com.locadoraAutomoveis.model.Cliente;
 import com.locadoraAutomoveis.repository.ClienteRepository;
 import com.locadoraAutomoveis.service.ClienteService;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
+
 
     @Autowired
     private ClienteRepository clienteRepository;
@@ -26,12 +28,15 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void deleteBy(Integer id) {
-        clienteRepository.deleteById(id);
+        if (clienteRepository.existsById(id)) {
+            clienteRepository.deleteById(id);
+        }
+        throw new ResourcesNotFoundException();
+
     }
 
     @Override
     public void findBy(Integer id) {
         clienteRepository.findById(id);
     }
-
 }

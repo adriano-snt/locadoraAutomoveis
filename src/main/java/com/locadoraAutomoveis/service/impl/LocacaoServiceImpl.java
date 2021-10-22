@@ -1,5 +1,6 @@
 package com.locadoraAutomoveis.service.impl;
 
+import com.locadoraAutomoveis.Exception.ResourcesNotFoundException;
 import com.locadoraAutomoveis.model.Locacao;
 import com.locadoraAutomoveis.repository.LocacaoRepository;
 import com.locadoraAutomoveis.service.LocacaoService;
@@ -25,6 +26,11 @@ public class LocacaoServiceImpl implements LocacaoService {
     }
 
     @Override
-    public void deleteBy(Integer id) { locacaoRepository.deleteById(id);}
+    public void deleteBy(Integer id) {
+        if (locacaoRepository.existsById(id)) {
+            locacaoRepository.deleteById(id);
+        }
+        throw new ResourcesNotFoundException();
+    }
 
 }

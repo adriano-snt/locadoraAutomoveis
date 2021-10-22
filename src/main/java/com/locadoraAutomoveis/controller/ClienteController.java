@@ -34,7 +34,7 @@ public class ClienteController {
 
     @ApiOperation(value = "Deleta o cliente por um ID")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> deletarPorId(@PathVariable Integer id){
+    public ResponseEntity<Boolean> deletarPorId(@PathVariable Integer id) {
         clienteService.deleteBy(id);
         return ResponseEntity.ok(Boolean.TRUE);
     }
