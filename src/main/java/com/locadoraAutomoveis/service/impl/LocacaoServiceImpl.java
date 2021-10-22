@@ -29,8 +29,9 @@ public class LocacaoServiceImpl implements LocacaoService {
     public void deleteBy(Integer id) {
         if (locacaoRepository.existsById(id)) {
             locacaoRepository.deleteById(id);
+        } else {
+            throw new ResourcesNotFoundException();
         }
-        throw new ResourcesNotFoundException();
     }
 
 }

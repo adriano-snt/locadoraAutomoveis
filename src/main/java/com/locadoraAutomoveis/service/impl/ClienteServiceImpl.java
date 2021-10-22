@@ -30,8 +30,10 @@ public class ClienteServiceImpl implements ClienteService {
     public void deleteBy(Integer id) {
         if (clienteRepository.existsById(id)) {
             clienteRepository.deleteById(id);
+        } else {
+            throw new ResourcesNotFoundException();
         }
-        throw new ResourcesNotFoundException();
+
 
     }
 
