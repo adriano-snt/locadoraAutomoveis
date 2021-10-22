@@ -1,3 +1,4 @@
+com/locadoraAutomoveis/config/SwaggerConfig.class
 com/locadoraAutomoveis/service/ClienteService.class
 com/locadoraAutomoveis/model/Cliente.class
 com/locadoraAutomoveis/service/impl/AutomovelServiceImpl.class

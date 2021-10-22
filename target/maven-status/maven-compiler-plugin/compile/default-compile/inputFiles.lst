@@ -12,6 +12,7 @@
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/controller/ClienteController.java
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/repository/ClienteRepository.java
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/service/impl/LocacaoServiceImpl.java
+/home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/config/SwaggerConfig.java
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/repository/AutomovelRepository.java
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/LocadoraAutomoveisApplication.java
 /home/hymenkils-silva/hywenklis/locadoraAutomoveis/src/main/java/com/locadoraAutomoveis/service/impl/ClienteServiceImpl.java
