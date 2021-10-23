@@ -1,7 +1,7 @@
 package com.locadoraAutomoveis.controller;
 
 import com.locadoraAutomoveis.model.Cliente;
-import com.locadoraAutomoveis.service.ClienteService;
+import com.locadoraAutomoveis.service.cliente.interfaces.ClienteService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

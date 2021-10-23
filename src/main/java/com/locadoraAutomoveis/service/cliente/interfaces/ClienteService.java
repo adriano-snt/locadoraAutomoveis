@@ -1,4 +1,4 @@
-package com.locadoraAutomoveis.service;
+package com.locadoraAutomoveis.service.cliente.interfaces;
 
 import com.locadoraAutomoveis.model.Cliente;
 

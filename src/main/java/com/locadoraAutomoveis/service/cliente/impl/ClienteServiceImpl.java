@@ -1,9 +1,9 @@
-package com.locadoraAutomoveis.service.impl;
+package com.locadoraAutomoveis.service.cliente.impl;
 
 import com.locadoraAutomoveis.Exception.ResourcesNotFoundException;
 import com.locadoraAutomoveis.model.Cliente;
 import com.locadoraAutomoveis.repository.ClienteRepository;
-import com.locadoraAutomoveis.service.ClienteService;
+import com.locadoraAutomoveis.service.cliente.interfaces.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

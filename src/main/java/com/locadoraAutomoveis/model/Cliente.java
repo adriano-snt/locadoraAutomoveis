@@ -4,18 +4,23 @@ package com.locadoraAutomoveis.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.locadoraAutomoveis.enums.TipoCliente;
+import com.locadoraAutomoveis.service.cliente.impl.ClienteGroupService;
+import com.locadoraAutomoveis.service.cliente.interfaces.CnpjGroup;
+import com.locadoraAutomoveis.service.cliente.interfaces.CpfGroup;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.br.CNPJ;
+import org.hibernate.validator.constraints.br.CPF;
+import org.hibernate.validator.group.GroupSequenceProvider;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,6 +28,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@GroupSequenceProvider(ClienteGroupService.class)
 public class Cliente {
     @Id
     @Column(name = "cliente_id")
@@ -35,8 +41,14 @@ public class Cliente {
     @Column(unique = true)
     private String email;
 
-    @Column(unique = true)
-    private String cpf;
+    @Column(name = "tipo_cliente", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TipoCliente tipoCliente;
+
+    @CPF(groups = CpfGroup.class, message = "CPF inválido!")
+    @CNPJ(groups = CnpjGroup.class)
+    @Column(name = "cpf_cnpj", unique = true)
+    private String cpfOuCnpj;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco")
